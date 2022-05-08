@@ -1,26 +1,54 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Table from 'react-bootstrap/Table';
+import Restaurant from "./Restaurant";
+import AddRestaurant from "./AddRestaurant";
 
 
 function RestaurantList() {
     //modle
-    const [restaurants, updateList] = useState([
-        {
-            id: 1,
-            name: "Yilin's Goodies",
-            address: 'San Francisco',
-            typesOfFood: 'chinese, coffe'
+    const [restaurants, updateList] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [selectedRestaurant,setSelected] = useState({});
+
+    //const [items, setItems] = useState([]);
+
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
+  useEffect(() => {
+    fetch("demo")
+      .then(res => {
+          console.log(res);
+          return res.json();
+      })
+      .then(
+        (result) => {
+          result.sort((a, b) => b.id - a.id);
+          
+          let result1 = result.slice(0,20);
+          updateList(result1);
+          setIsLoaded(true);
         },
-        {
-            id: 2,
-            name: "Sam's Goodies",
-            address: 'Los Angeles',
-            typesOfFood: 'noodle, coffe'
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          console.log(error);
+          setIsLoaded(true);
+          setError(error);
         }
-    ]);
+      )
+  }, [])
 
     //control
-    function handleSeclect(i) {
+    function listUpdated(newList) {
+        updateList(newList);
+    }
+
+    function handleSeclect(restaurant) {
+
+        setSelected(restaurant);
         //console.log(i);
         // call rest api restaurants/{id}
         //display resturant details
@@ -28,8 +56,20 @@ function RestaurantList() {
 
     function handleDelete(restaurant){
         console.log(restaurant);
-        updateList(restaurants.filter((item) => item !== restaurant));
+
+         fetch(`demo/${restaurant.id}`, {
+            method:"DELETE",
+        }).then(e => {
+            updateList(restaurants.filter((item) => item !== restaurant));
+        });
     }
+    // useEffect((restaurant) => {
+    //     // DELETE request using fetch inside useEffect React hook
+    //     fetch('demo'+restaurant.id, { method: 'DELETE' })
+    //         .then(() => setStatus('Delete successful'));
+    
+    // // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    // }, [restaurants]);
 
     //view
     return (
@@ -49,9 +89,9 @@ function RestaurantList() {
                         (restaurant, idx) =>
                         <tr key={idx} >
                             <td>{restaurant.id}</td>
-                            <td>{restaurant.name}</td>
+                            <td>{restaurant.applicant}</td>
                             <td>{restaurant.address}</td>
-                            <td>{restaurant.typesOfFood}</td>
+                            <td>{restaurant.foodItems}</td>
                             <td><button onClick={
                                 () => handleDelete(restaurant)
                             }>Delete</button>
@@ -66,6 +106,11 @@ function RestaurantList() {
                 </tbody>
             </Table>
 
+            <Restaurant restaurant = {selectedRestaurant}/> 
+            <AddRestaurant
+                restaurants = {restaurants}
+                listUpdated = {listUpdated}
+             />
 
         </div>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import RestaurantList from "./RestaurantList";
 
 
 function Restaurant(props) {
@@ -10,7 +11,7 @@ function Restaurant(props) {
         <div>
             <div>{details.id}</div>
             <div>{details.address}</div>
-            <div>{details.typesOfFood}</div>
+            <div>{details.foodItems}</div>
 
         </div>
         <div>

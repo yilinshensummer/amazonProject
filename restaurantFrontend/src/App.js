@@ -8,15 +8,15 @@ import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
 
 function App() {
-  const [selectedRestaurant] = useState(
-    {
-        id: 1,
-        name: "Yilin's Goodies",
-        address: 'San Francisco',
-        typesOfFood: 'chinese, coffe'
-    }
+  // const [selectedRestaurant] = useState(
+  //   {
+  //       id: 1,
+  //       name: "Yilin's Goodies",
+  //       address: 'San Francisco',
+  //       typesOfFood: 'chinese, coffe'
+  //   }
     
-);
+//);
   return (
     <div>
       <div className="App">
@@ -24,7 +24,7 @@ function App() {
       <RestaurantList/>
       </div>
 
-      <Restaurant restaurant = {selectedRestaurant}/>
+      {/* <Restaurant restaurant = {selectedRestaurant}/> */}
 
       <AddRestaurant />
     </div>
