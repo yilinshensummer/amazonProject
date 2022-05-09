@@ -26,7 +26,7 @@ function App() {
 
       {/* <Restaurant restaurant = {selectedRestaurant}/> */}
 
-      <AddRestaurant />
+      
     </div>
   );
 }

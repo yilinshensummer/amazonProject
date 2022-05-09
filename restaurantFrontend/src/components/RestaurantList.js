@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import Table from 'react-bootstrap/Table';
 import Restaurant from "./Restaurant";
 import AddRestaurant from "./AddRestaurant";
+import Search from "./Search";
 
 
 function RestaurantList() {
@@ -19,7 +20,7 @@ function RestaurantList() {
   useEffect(() => {
     fetch("demo")
       .then(res => {
-          console.log(res);
+          //console.log(res);
           return res.json();
       })
       .then(
@@ -74,7 +75,17 @@ function RestaurantList() {
     //view
     return (
         <div className="container">
-            <h3 className="p-3 text-center">Restaurant</h3>
+            <h3 className="p-3 text-center">Selected Restaurant Details</h3>
+            <Restaurant restaurant = {selectedRestaurant}/> 
+            <AddRestaurant
+                restaurants = {restaurants}
+                listUpdated = {listUpdated}
+             />
+            <Search
+             restaurants = {restaurants}
+             listUpdated = {listUpdated}
+             />
+
             <Table striped border hover>
                 <thead>
                     <tr>
@@ -106,11 +117,7 @@ function RestaurantList() {
                 </tbody>
             </Table>
 
-            <Restaurant restaurant = {selectedRestaurant}/> 
-            <AddRestaurant
-                restaurants = {restaurants}
-                listUpdated = {listUpdated}
-             />
+           
 
         </div>
     )

@@ -14,8 +14,8 @@ function AddRestaurant(props) {
         foodItems: "noodle"
     }
 
-    function handleSumbit(event){
-        console.log(event);
+    function handleSumbit(){
+        //console.log(state);
         fetch('demo/add', {
             method:  'POST',
             headers: {
