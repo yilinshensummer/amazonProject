@@ -6,7 +6,6 @@ import React, {useState} from 'react';
 import AddRestaurant from './components/AddRestaurant';
 import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
-import Map from './components/Map';
 import GoogleMap from './components/GoogleMap';
 
 

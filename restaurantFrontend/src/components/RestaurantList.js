@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Restaurant from "./Restaurant";
 import AddRestaurant from "./AddRestaurant";
 import Search from "./Search";
-import GoogleMap from "./GoogleMap";
+
 
 
 

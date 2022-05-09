@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww13060\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\
+\
+\
+1. Overview of the application:\
+\
+Food truck/restaurant application that shows list of restaurants and food trucks in San Francisco. The list can be found on this link. Download the list as a csv and use it as initial data for your site. The site should allow users to:\
+\'95 Add restaurants to the current restaurant list\
+\'95 Click on a restaurant to view the restaurant details\
+\'95 Name\
+\'95 Address\
+\'95 Food types\
+\'95 Sort the list of restaurants by name or address\
+\
+\
+2. instructions to install and start the app:\
+\
+3. App overall architecture pattern: \
+\
+Use MVC(Model, View, Controller)\
+\
+View - Frontend React app loads restaurant list and interacts with users, fetches different APIs to convey user requests to the controller, and gets model updates from the controller.\
+\
+Controller: the Backend java code mediates between the view and the model. Spring Boot RESTful API can create, retrieve, update, and delete (CRUD) client data with the user request from the view and data in the Model.\
+\
+Model - Mysql Store data file of the restaurant list for the project, also get commands from the controller to first store then update data. Postman helps to load the original CSV file to the Mysql database and also helps to test the RESTful API.\
+\
+\
+4. expected payload and response for at least one route of the REST API:\
+\
+Integration with a backend service developed by you with CRUD (create, read, update, delete) operations. \uc0\u8232 \
+\
+5. Integration with a 3rd party RESTful API:\
+\
+Integrated with Google Map API to show the city map of SanFrancisco where the food trucks/restaurants are located.\
+\
+6. Screenshots of the app where distinct design decisions:\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 	\
+	\
+	Usage of at least 1 Object-Oriented principle (inheritance, \uc0\u8232 polymorphism, encapsulation, and abstraction). \u8232 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\partightenfactor0
+\cf0 Note: you will need to detail where and how your Web App meets these requirements in your repository's README file when you submit your project. \uc0\u8232 \
+}

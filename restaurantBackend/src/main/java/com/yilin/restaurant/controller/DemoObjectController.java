@@ -14,13 +14,8 @@ import java.util.Scanner;
 @RestController
 public class DemoObjectController {
 
-
     @Autowired
     DemoObjectRepo repo;
-
-
-
-
 
     @GetMapping("/demo")
 
