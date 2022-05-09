@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table';
 import Restaurant from "./Restaurant";
 import AddRestaurant from "./AddRestaurant";
 import Search from "./Search";
+import GoogleMap from "./GoogleMap";
+
 
 
 function RestaurantList() {
@@ -27,7 +29,7 @@ function RestaurantList() {
         (result) => {
           result.sort((a, b) => b.id - a.id);
           
-          let result1 = result.slice(0,20);
+          let result1 = result.slice(0,10);
           updateList(result1);
           setIsLoaded(true);
         },
@@ -77,7 +79,9 @@ function RestaurantList() {
         <div className="container">
             <div>
             
-            <Restaurant align="left" restaurant = {selectedRestaurant}/> 
+            <Restaurant restaurant = {selectedRestaurant}/> 
+            {/* <Map restaurant = {selectedRestaurant}/> */}
+            
             
             </div>
             <p></p>
@@ -122,6 +126,7 @@ function RestaurantList() {
                     )}
                 </tbody>
             </Table>
+            
 
            
 

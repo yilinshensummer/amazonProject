@@ -8,7 +8,7 @@ function Restaurant(props) {
     
     <div className="restaurant-info">
       
-       <h2 >Restaurant Details</h2>
+       <h2>Restaurant Details</h2>
             <ul >
               
                 <li><strong>Restaurant Name: </strong>{details.applicant}</li>

@@ -6,6 +6,9 @@ import React, {useState} from 'react';
 import AddRestaurant from './components/AddRestaurant';
 import Restaurant from './components/Restaurant';
 import RestaurantList from './components/RestaurantList';
+import Map from './components/Map';
+import GoogleMap from './components/GoogleMap';
+
 
 function App() {
   // const [selectedRestaurant] = useState(
@@ -21,10 +24,15 @@ function App() {
     <div>
       <div className="App">
         <h1 className="App-title"> Welcome to Restaurant App</h1>
+      
       <RestaurantList/>
+      <GoogleMap/>
+      
+      
       </div>
+      
 
-      {/* <Restaurant restaurant = {selectedRestaurant}/> */}
+      
 
       
     </div>

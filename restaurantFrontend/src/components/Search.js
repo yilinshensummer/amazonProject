@@ -31,7 +31,7 @@ function Search(props) {
   return (
     <div className="rearchContainer">
         <Form>
-            <Form.Label className="float-left">Search Restaurant Name</Form.Label>
+            <Form.Label >Search Restaurant Name</Form.Label>
             <InputGroup className="mb-3" controlId="searchName">
                 <Form.Control type="name"
                 placeholder="Enter Restaurant Name"
