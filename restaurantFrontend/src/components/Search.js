@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 function Search(props) {
     let listUpdated = props.listUpdated;
@@ -30,19 +31,18 @@ function Search(props) {
   return (
     <div className="rearchContainer">
         <Form>
-            <Form.Label>Search Restaurant Name</Form.Label>
-            <Form.Group className="mb-3" controlId="searchName">
+            <Form.Label className="float-left">Search Restaurant Name</Form.Label>
+            <InputGroup className="mb-3" controlId="searchName">
                 <Form.Control type="name"
                 placeholder="Enter Restaurant Name"
                 onChange={e => {setSearchApplicant(e.target.value)} } 
-                
                 />
-            
-            </Form.Group>
-            
-            <Button variant="primary" onClick={() => handleSearch()}>
+            <Button variant="outline-secondary"id="button-addon2" onClick={() => handleSearch()}>
                 Search
             </Button>
+            </InputGroup>
+            
+            
             
         </Form>
         

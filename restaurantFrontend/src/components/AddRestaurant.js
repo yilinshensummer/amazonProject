@@ -1,6 +1,8 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 
@@ -30,23 +32,28 @@ function AddRestaurant(props) {
 
   return (
     <div className="container">
+        
         <Form>
-            <Form.Group className="mb-3" controId="formName">
-                <Form.Label>Applicant</Form.Label>
+            <Form.Label >Add Restaurant</Form.Label>
+            <Row className="mb-3">
+            <Form.Group as={Col} controId="formName">
+                
                 <Form.Control type="name" 
                 //value={state.applicant}
                 onChange={e => state.applicant = e.target.value}
                 placeholder="EnterName"/>
             </Form.Group>
-            <Form.Group className="mb-3" controId="formBasicPassword">
-                <Form.Label>Address</Form.Label>
+
+            <Form.Group as={Col} controId="formBasicPassword">
+                
                 <Form.Control type="name"
                 
                 onChange={e => state.address = e.target.value}
                 placeholder="Address"/>
             </Form.Group>
-            <Form.Group className="mb-3" controId="formFoodTypes">
-                <Form.Label>Food Items</Form.Label>
+
+            <Form.Group as={Col} controId="formFoodTypes">
+               
                 <Form.Control type="name"
                 //value={state.foodItems}
                 onChange={e => state.foodItems = e.target.value}
@@ -54,9 +61,13 @@ function AddRestaurant(props) {
 
             </Form.Group>
 
-            <Button variant ="primary" onClick={() => handleSumbit()}>
-                Add
+            <Col xs="auto">
+            <Button variant ="primary" type="submit" onClick={() => handleSumbit()}>
+                Add Restaurant
             </Button>
+            </Col>
+
+            </Row>
         
         </Form>
     </div>

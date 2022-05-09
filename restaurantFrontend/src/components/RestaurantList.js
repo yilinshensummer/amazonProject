@@ -75,9 +75,14 @@ function RestaurantList() {
     //view
     return (
         <div className="container">
-            <h3 className="p-3 text-center">Selected Restaurant Details</h3>
-            <Restaurant restaurant = {selectedRestaurant}/> 
-            <AddRestaurant
+            <div>
+            
+            <Restaurant align="left" restaurant = {selectedRestaurant}/> 
+            
+            </div>
+            <p></p>
+            
+             <AddRestaurant
                 restaurants = {restaurants}
                 listUpdated = {listUpdated}
              />
@@ -85,7 +90,6 @@ function RestaurantList() {
              restaurants = {restaurants}
              listUpdated = {listUpdated}
              />
-
             <Table striped border hover>
                 <thead>
                     <tr>
@@ -106,6 +110,8 @@ function RestaurantList() {
                             <td><button onClick={
                                 () => handleDelete(restaurant)
                             }>Delete</button>
+                            </td>
+                            <td>
                             <button onClick={
                                 () => handleSeclect(restaurant)
                             }>Select</button>

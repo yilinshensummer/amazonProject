@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.restaurant-info {
+  position: relative;
+  top: 20px;
+  left:40px;
+  width: 600px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  max-width:100%;
+  margin:auto;
+  text-align:left;
+  
+}
